@@ -1,25 +1,38 @@
 <div class="container mt-5">
-    <div class="row">|
+    <div class="row">
         <div class="col-3"></div>
         <div class="col-6 shadow teclado bg-black text-white rounded">
-            <h1 class="text-center my-4">Calculadora Angular</h1>
-            <div class="border p-5 mx-3 mt-3 mb-4">
+            <h1 class="text-center my-4">{{titulo}}</h1>
+            <form class="form-group border p-5 mx-3 mt-3 mb-4">
                 <div>
-                    <p>Operando A</p>
-                    <input type="number" name="a">
+                    <label  class = "mb-2">Operando A</label>
+                    <input  type = "number" 
+                            class = "form-control"  
+                            placeholder = "Ingresa operando A" 
+                            [(ngModel)] = "operandoA"       
+                            name = "operandoA" 
+                    />
                 </div>
                 <div class="mt-3">
-                    <p>Operando b</p>
-                    <input type="number" name="b">
+                    <label class="mb-2">Operando b</label>
+                    <input type="number" 
+                            class="form-control"  
+                            name="operandoB" 
+                            placeholder="Ingresa operando B"
+                            [(ngModel)] = "operandoB" 
+                    />
                 </div>
                 <div class="my-4">
-                    <button class="btn btn-outline-light">SUMAR</button>
+                    <button type="submit" 
+                            class="btn btn-outline-light"
+                            (click)="sumar()">
+                        SUMAR
+                    </button>
                 </div>
                 <div>
-                    <p>Resultado</p>
-                    <input type="number" name="resultado">
+                    <p>{{resultado}}</p>
                 </div>
-            </div>
+            </form>
         </div>
         <div class="col-3"></div>
     </div>
